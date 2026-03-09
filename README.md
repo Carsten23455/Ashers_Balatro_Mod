@@ -6,7 +6,7 @@ a balatro mod ive made for @SteamKeyGiveaway.
 
 - @HzDelta, Among Us Jokers (Except Hook Sinker)
 
-- @Minty, most if not all unless specified
+- https://bsky.app/profile/mintteavee.bsky.social, most if not all unless specified
 
 - @medoisnotcool
 
