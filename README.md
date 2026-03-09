@@ -1,4 +1,4 @@
-# Name
+# Asher's Balatro Mod
 
 a balatro mod ive made for @SteamKeyGiveaway.
 
