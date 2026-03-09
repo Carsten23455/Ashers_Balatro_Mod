@@ -358,7 +358,7 @@ SMODS.Blind({
     key = "Clopen",
     atlas = "SecretBoss",
     pos = { x = 0, y = 1 },
-    mult = 4,
+    mult = 2,
     boss = {
         showdown = true,
     },
@@ -391,7 +391,7 @@ SMODS.Blind({
     key = "Jevil",
     atlas = "SecretBoss",
     pos = { x = 0, y = 0 },
-    mult = 4,
+    mult = 2,
     boss_colour = G.C.RED,
     boss = {
         showdown = true
@@ -448,7 +448,7 @@ SMODS.Blind({
     key = "Minty",
     atlas = "SecretBoss",
     pos = { x = 0, y = 2 },
-    mult = 4,
+    mult = 2,
     boss = {
         showdown = true
     },
@@ -530,7 +530,7 @@ SMODS.Blind({
     key = "Argent Blade",
     atlas = "Boss",
     pos = { x = 0, y = 0 },
-    mult = 4,
+    mult = 2,
     boss = {
         showdown = true
     },
@@ -569,7 +569,7 @@ SMODS.Blind({
     key = "Oxide Baton",
     atlas = "Boss",
     pos = { x = 0, y = 1 },
-    mult = 4,
+    mult = 2,
     boss = {
         showdown = true
     },
@@ -600,7 +600,7 @@ SMODS.Blind({
     key = "Umber Club",
     atlas = "Boss",
     pos = { x = 0, y = 2 },
-    mult = 4,
+    mult = 2,
     boss = {
         showdown = true
     },
@@ -649,7 +649,7 @@ SMODS.Blind({
     key = "Golden Coin",
     atlas = "Boss",
     pos = { x = 0, y = 3 },
-    mult = 4,
+    mult = 2,
     boss_colour = G.C.BLUE,
     boss = {
         showdown = true
@@ -695,7 +695,7 @@ SMODS.Blind({
     key = "Thistle Shield",
     atlas = "Boss",
     pos = { x = 0, y = 4 },
-    mult = 4,
+    mult = 2,
     boss_colour = G.C.BLUE,
     boss = {
         showdown = true
@@ -734,7 +734,7 @@ SMODS.Blind({
     key = "Velvet Flower",
     atlas = "Boss",
     pos = { x = 0, y = 5 },
-    mult = 4,
+    mult = 2,
     boss_colour = G.C.BLUE,
     boss = {
         showdown = true
