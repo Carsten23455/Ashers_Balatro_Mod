@@ -1,6 +1,6 @@
 # Asher's Balatro Mod
 
-a balatro mod ive made for @SteamKeyGiveaway.
+a balatro mod ive made for [@SteamKeyGiveaway](https://www.twitch.tv/steamkeygiveaway).
 
 ## Credits
 
