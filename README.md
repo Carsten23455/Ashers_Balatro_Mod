@@ -4,9 +4,9 @@ a balatro mod ive made for @SteamKeyGiveaway.
 
 ## Credits
 
-- @HzDelta, Among Us Jokers (Except Hook Sinker)
+- [@HzDelta](https://bsky.app/profile/hzdelta.newgrounds.com), Among Us Jokers (Except Hook Sinker)
 
-- https://bsky.app/profile/mintteavee.bsky.social, most if not all unless specified
+- [@Minty](https://bsky.app/profile/mintteavee.bsky.social), most if not all art unless specified
 
 - @medoisnotcool
 
