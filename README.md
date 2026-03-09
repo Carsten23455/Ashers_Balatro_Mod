@@ -12,6 +12,6 @@ a balatro mod ive made for @SteamKeyGiveaway.
 
 - @jacky00025
 
-- https://www.youtube.com/watch?v=cptLHneguGA, for a theme with some bosses
+- [FOOL'S SUIT - Balatro x Deltarune SECRET BOSS](https://www.youtube.com/watch?v=cptLHneguGA), for a theme with some bosses
 
-- https://www.youtube.com/watch?v=2NJUORhh3e0, menu music
+- [Balatro Tarot Pack Theme - Reggae-Funk Version Feat. @SkaTuneNetwork](https://www.youtube.com/watch?v=2NJUORhh3e0), menu music
