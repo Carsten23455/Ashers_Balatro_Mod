@@ -1,6 +1,6 @@
 # Name
 
-a balatro mod ive made for a streamer.
+a balatro mod ive made for @SteamKeyGiveaway.
 
 ## Credits
 
