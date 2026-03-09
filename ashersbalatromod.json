@@ -1,0 +1,17 @@
+{
+  "id": "ashersbalatromod",
+  "name": "Ashers Balatro Mod",
+  "author": [
+    "Carsten23455"
+  ],
+  "description": "Description here\n\nArtist(s)\n-  hzDelta (Among Us Joker's)\n-  medoisnotcool\n-  mintteavee\n-  jacky00025",
+  "prefix": "ashersba",
+  "main_file": "main.lua",
+  "version": "1.0.0",
+  "priority": 1,
+  "badge_colour": "FFFFFF",
+  "badge_text_colour": "000000",
+  "dependencies": [
+    "Steamodded (>=1.0.0~BETA-0827c)"
+  ]
+}

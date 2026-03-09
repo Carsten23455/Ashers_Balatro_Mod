@@ -1,0 +1,18 @@
+[manifest]
+version = "1.0.0"
+priority = 0
+
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+pattern = "self.title_top:emplace(replace_card)"
+position = "after"
+payload = '''
+if G.STAGE == G.STAGES.MAIN_MENU and G.P_CENTERS and G.P_CENTERS['j_ashersba_fanmadefun'] then
+    replace_card:set_ability(G.P_CENTERS['j_ashersba_fanmadefun'], true)
+    if replace_card.children.front then replace_card.children.front:remove(); replace_card.children.front = nil end
+    replace_card:set_sprites(G.P_CENTERS['j_ashersba_fanmadefun'])
+end
+'''
+match_indent = true
+
