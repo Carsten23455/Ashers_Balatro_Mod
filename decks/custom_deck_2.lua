@@ -1,3 +1,18 @@
+local function ashersba_deck_has_win(...)
+    if not get_deck_win_stake then
+        return false
+    end
+
+    for _, deck_key in ipairs({ ... }) do
+        local win_stake = get_deck_win_stake(deck_key)
+        if type(win_stake) == 'number' and win_stake > 0 then
+            return true
+        end
+    end
+
+    return false
+end
+
 SMODS.Back {
     key = 'custom_deck_2',
     pos = { x = 1, y = 0 },
@@ -17,10 +32,13 @@ SMODS.Back {
             [2] = '25% Membership Fees'
         },
     },
-    unlocked = true,
+    unlocked = false,
     discovered = false,
     no_collection = false,
     atlas = 'CustomDecks',
+    check_for_unlock = function(self, args)
+        return ashersba_deck_has_win('b_ashersba_custom_deck_1', 'b_custom_deck_1')
+    end,
     apply = function(self, back)
         G.GAME.modifiers = G.GAME.modifiers or {}
         G.GAME.modifiers.ashersba_gilded_deck = true
@@ -44,16 +62,25 @@ SMODS.Back {
             func = function()
                 local cards = {}
                 local suits = { 'Spades', 'Hearts', 'Diamonds', 'Clubs' }
+                local gold_center = G.P_CENTERS and G.P_CENTERS.m_gold
                 for i = 1, #suits do
-                    cards[#cards + 1] = SMODS.add_card({
+                    local new_card = SMODS.add_card({
                         set = 'Base',
                         area = G.deck,
                         rank = 'A',
                         suit = suits[i],
-                        enhancement = 'm_gold'
+                        enhancement = gold_center and gold_center.key or nil
                     })
+                    if new_card then
+                        cards[#cards + 1] = new_card
+                    end
                 end
-                SMODS.calculate_context({ playing_card_added = true, cards = cards })
+
+                if #cards > 0 then
+                    pcall(function()
+                        SMODS.calculate_context({ playing_card_added = true, cards = cards })
+                    end)
+                end
                 G.GAME.starting_deck_size = #G.playing_cards
                 return true
             end
@@ -152,4 +179,3 @@ function add_round_eval_row(config)
 
     return gilded_add_round_eval_row_ref(config)
 end
-

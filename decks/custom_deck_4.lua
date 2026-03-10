@@ -1,3 +1,17 @@
+local function ashersba_deck_has_win(...)
+    if not get_deck_win_stake then
+        return false
+    end
+
+    for _, deck_key in ipairs({ ... }) do
+        local win_stake = get_deck_win_stake(deck_key)
+        if type(win_stake) == 'number' and win_stake > 0 then
+            return true
+        end
+    end
+
+    return false
+end
 
 SMODS.Back {
     key = 'custom_deck_4',
@@ -12,10 +26,13 @@ SMODS.Back {
             [2] = '0 cards'
         },
     },
-    unlocked = true,
+    unlocked = false,
     discovered = false,
     no_collection = false,
     atlas = 'CustomDecks',
+    check_for_unlock = function(self, args)
+        return ashersba_deck_has_win('b_ashersba_custom_deck_3', 'b_custom_deck_3')
+    end,
 
     apply = function(self, back)
         G.GAME.modifiers = G.GAME.modifiers or {}

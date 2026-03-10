@@ -1,3 +1,18 @@
+local function ashersba_deck_has_win(...)
+    if not get_deck_win_stake then
+        return false
+    end
+
+    for _, deck_key in ipairs({ ... }) do
+        local win_stake = get_deck_win_stake(deck_key)
+        if type(win_stake) == 'number' and win_stake > 0 then
+            return true
+        end
+    end
+
+    return false
+end
+
 SMODS.Back {
     key = 'custom_deck_6',
     pos = { x = 4, y = 0 },
@@ -14,10 +29,13 @@ SMODS.Back {
             [1] = 'Chat has chosen to make this deck',
         },
     },
-    unlocked = true,
+    unlocked = false,
     discovered = false,
     no_collection = false,
     atlas = 'CustomDecks',
+    check_for_unlock = function(self, args)
+        return ashersba_deck_has_win('b_ashersba_custom_deck_4', 'b_custom_deck_4')
+    end,
     apply = function(self, back)
         G.GAME.starting_params.dollars = (G.GAME.starting_params.dollars or 4) + self.config.extra.dollars_bonus
         G.GAME.starting_params.joker_slots = self.config.extra.joker_slots
