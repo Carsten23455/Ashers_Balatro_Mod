@@ -38,22 +38,36 @@ SMODS.Joker{ --Heavier than feathers
     atlas = 'CustomJokers',
     pools = { ["ashersba_steamkey_jokers"] = true },
     
-    loc_vars = function(self, info_queue, card)
-        
-        return {vars = {card.ability.extra.AmountLoop}}
-    end,
-    
-    calculate = function(self, card, context)
-        if context.cardarea == G.jokers and context.joker_main  then
-            return {
-                Xmult = 2
-            }
-        end
-        if context.individual and context.cardarea == G.play  then
-            return {
-                x_chips = 2
-            }
-        end
-    end
-}
+	    loc_vars = function(self, info_queue, card)
+	        
+	        return {vars = {card.ability.extra.AmountLoop}}
+	    end,
+	    
+	    calculate = function(self, card, context)
+	        local function count_steel(scoring_hand)
+	            local n = 0
+	            for _, scoring_card in ipairs(scoring_hand or {}) do
+	                local enh = (SMODS.get_enhancements and SMODS.get_enhancements(scoring_card)) or {}
+	                if enh["m_steel"] then
+	                    n = n + 1
+	                end
+	            end
+	            return n
+	        end
 
+	        if context.cardarea == G.jokers and context.joker_main then
+	            local steel_count = count_steel(context.scoring_hand)
+	            if steel_count > 0 then
+	                return { Xmult = 2 ^ steel_count }
+	            end
+	        end
+
+	        if context.individual and context.cardarea == G.play and context.other_card then
+	            -- Only apply the chip multiplier on hands with no steel cards.
+	            if context.scoring_hand and count_steel(context.scoring_hand) == 0 then
+	                return { x_chips = 2 }
+	            end
+	        end
+	    end
+	}
+	
