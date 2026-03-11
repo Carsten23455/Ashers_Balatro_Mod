@@ -2,6 +2,10 @@
 
 a balatro mod ive made for [@SteamKeyGiveaway](https://www.twitch.tv/steamkeygiveaway).
 
+## Dependencies
+
+- Steamodded (>=1.0.0~BETA-0827c)
+
 ## Credits
 
 - [@HzDelta](https://hzdelta.carrd.co/), Among Us Jokers (Except Hook Sinker)
